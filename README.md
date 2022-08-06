@@ -1,1 +1,1 @@
-# Abgular-E-Commerce-Project
+# Angular-E-Commerce-Project
