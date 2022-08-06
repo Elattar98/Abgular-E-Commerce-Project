@@ -1,0 +1,16 @@
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Shopping</span>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" [routerLink] = "['/home']">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"
+         [routerLink] = "['/productcart']"
+         ><img src="https://cdn-icons-png.flaticon.com/512/1121/1121690.png" alt="" width="25px"> <span class="position-absolute top-5 start-95 translate-middle badge rounded-pill bg-secondary">
+           {{cart.length}} </span></a>
+      </li>
+    </ul>
+  </div>
+</nav>

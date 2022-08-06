@@ -1,0 +1,8 @@
+
+<div class="row">
+    <app-product-card class= "col mb-3"
+        *ngFor = "let prod of products"
+        [product] = "prod"
+        (favoriteAdded) = "onFavoriteAdded($event)">
+    </app-product-card>
+</div>

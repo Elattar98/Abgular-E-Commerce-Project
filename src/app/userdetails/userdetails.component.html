@@ -1,0 +1,21 @@
+<div class="row m-1">
+  <app-header></app-header>
+</div>
+
+<div class="position-absolute top-50 start-50 translate-middle">
+  <h1>Your Data</h1>
+  <div class="card mb-3 " style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="" class="img-fluid rounded-start" alt="">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{mainuser.name.firstname}} {{mainuser.name.lastname}}</h5>
+          <p class="card-text">{{mainuser.address.city}} {{mainuser.address.street}} {{mainuser.address.number}} {{mainuser.address.zipcode}}</p>
+          <p class="card-text"><small class="text-muted">{{mainuser.phone}}</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

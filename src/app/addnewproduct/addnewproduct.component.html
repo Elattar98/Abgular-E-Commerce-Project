@@ -1,0 +1,37 @@
+<form class="row g-3 m-5" [formGroup]="addProductForm" (ngSubmit)="onSubmit()">
+  <h1>Product Details</h1>
+  <div class="col-md-6 form-group">
+    <label for="inputTitle" class="form-label">Title</label>
+    <input type="email" class="form-control" id="inputTitle" formControlName="title">
+    <span class="help-block" *ngIf="!addProductForm?.get('title')?.valid && addProductForm?.get('title')?.touched">Please enter Title!</span>
+  </div>
+  <div class="col-md-6 form-group">
+    <label for="inputPrice" class="form-label">Price</label>
+    <input type="text" class="form-control" id="inputPrice" formControlName="price">
+    <span class="help-block" *ngIf="!addProductForm?.get('price')?.valid && addProductForm?.get('price')?.touched">Please enter Price!</span>
+  </div>
+  <div class="col-12 form-group">
+    <label for="inputImage" class="form-label">Image</label>
+    <input type="text" class="form-control" id="inputImage" formControlName="image">
+    <span class="help-block" *ngIf="!addProductForm?.get('image')?.valid && addProductForm?.get('image')?.touched">Please enter Image URL!</span>
+  </div>
+  <div class="col-12 form-group">
+    <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"></textarea>
+     <span class="help-block" *ngIf="!addProductForm?.get('description')?.valid && addProductForm?.get('description')?.touched">Please enter Product Description!</span>
+  </div>
+  <div class="col-12 form-group">
+    <button type="submit" class="btn btn-primary" [disabled]= "true"
+    *ngIf="!addProductForm?.get('title')?.valid
+    || !addProductForm?.get('price')?.valid
+    || !addProductForm?.get('image')?.valid
+    || !addProductForm?.get('description')?.valid">Submit</button>
+    <button type="button" class="btn btn-primary" [disabled]= "false"
+    *ngIf="addProductForm?.get('title')?.valid
+    && addProductForm?.get('price')?.valid
+    && addProductForm?.get('image')?.valid
+    && addProductForm?.get('description')?.valid"
+    [routerLink] = "['/home']"
+    (click)=onSubmit()>Submit</button>
+  </div>
+</form>

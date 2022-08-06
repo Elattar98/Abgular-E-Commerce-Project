@@ -1,0 +1,41 @@
+<form class="position-absolute top-50 start-50 translate-middle" #lif="ngForm" (ngSubmit)="onSubmit(lif)">
+  <div class="mb-3 row">
+    <div class="mb-3 row">
+      <label for="inputUsername" class="col-sm-2 col-form-label">Username</label>
+      <div class="col-sm-4">
+        <input
+        type="text"
+        class="form-control"
+        id="inputUsername"
+        ngModel
+        name= "username"
+        required
+        #username="ngModel">
+        <span class="help-block" *ngIf="!username.valid&&username.touched">Please enter a valid username!</span>
+      </div>
+    </div>
+
+    <div class="mb-3 row">
+      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+      <div class="col-sm-4">
+        <input
+        type="password"
+        class="form-control"
+        id="inputPassword"
+        ngModel
+        name= "password"
+        required
+        #password="ngModel">
+        <span class="help-block" *ngIf="!password.valid&&password.touched">Please enter a valid password!</span>
+      </div>
+    </div>
+  </div>
+  <button
+  class="btn btn-primary"
+  type="button"
+  [disabled]= "!lif.valid"
+  [routerLink] = "['/userdetails']"
+  (click)="onSubmit(lif)">
+  LogIn
+  </button>
+</form>
